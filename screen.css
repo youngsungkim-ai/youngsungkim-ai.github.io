@@ -11,7 +11,7 @@ body {
  font-size: 13px;
  font-family: Helvetica, Arial, sans-serif;
  background-color: #F0F0F0;
- font-size: 72%;  
+ font-size: 85%;  
  color: #3C3D36;
  }
 
@@ -44,7 +44,7 @@ h3 {
 	margin: 0px 20px 0px 0px;
 }
 
- h4 {
+h4 {
 	margin: 0px 0px 0px 8px;
 	font-size: 14px;
 	font-weight: normal;
@@ -195,11 +195,18 @@ ul, ol, li {
 	padding-top: 30px;
 }
 
+#content ptitle {
+	padding: 0px 0px 0px 0px;
+	/*text-decoration:underline; */
+    /*font-size: 12px; */
+	font-weight: normal;
+	color: #ab873f; 
+}
 	
 .post {
 	border: 1px solid;
 	border-color:#483030;
-	margin: 0px 0px 30px 0px;
+	margin: 0px 0px 30px 30px;
 	/*background: url(images/img06.gif) repeat-x left bottom; */
    background: #FFFFFF; 
 }
@@ -220,6 +227,9 @@ ul, ol, li {
 	color: #006295;
 	text-transform:uppercase;
 }
+
+
+
 .post .byline {
 	float: right;
 	margin: -19px 20px 0px 0px;
@@ -232,7 +242,7 @@ ul, ol, li {
 	 /*border: 1px solid #F0F0F0 */
 	}
 .post .entry {
-	padding: 20px 0px 0px 30px;
+	padding: 20px 20px 20px 20px;
 }
 
 
