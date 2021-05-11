@@ -41,7 +41,7 @@ h2 {
 h3 {
 	font-size: 15px;
 	font-weight: normal;
-	margin: 0px 20px 0px 0px;
+	margin: 0px 20px 5px 5px;
 }
 
 h4 {
@@ -68,6 +68,8 @@ ul, ol, li {
 	margin: 0px 0px 4px 0px;
 	padding: 0px 0px 2px 0px;
 	list-style: none;
+    display:block
+    float:left
 }
 
 
