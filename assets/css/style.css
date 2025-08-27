@@ -7,6 +7,7 @@
 * Secondary: #15616D (Teal/Ocean)
 * Light: #FFECD1 (Warm Cream)
 * Accent: #FF7D00 (Vibrant Orange)
+* Light Accent: #FF9A00 (Yellow)
 * Warm: #78290F (Burnt Sienna)
 * Text: #333333
 */
@@ -46,7 +47,7 @@ a {
 }
 
 a:hover {
-  color: #FF7D00;
+  color: #FFD93D;
   text-decoration: none;
 }
 
@@ -95,7 +96,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #header h2 span {
   color: #fff;
-  border-bottom: 2px solid #FF7D00;
+  border-bottom: 2px solid #FFD93D;
   padding-bottom: 6px;
 }
 
@@ -322,7 +323,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #navbar.navbar-mobile a:hover {
-  color: #FF7D00;
+  color: #FFD93D;
 }
 
 #navbar.navbar-mobile a:before {
@@ -523,7 +524,7 @@ section .container {
 
 .interests .icon-box .toggle-icon {
   font-size: 20px;
-  color: #FF7D00;
+  color: #FFD93D;
   transition: transform 0.3s;
 }
 
@@ -709,7 +710,7 @@ section .container {
 }
 
 .text-warning {
-  color: #FF7D00 !important;
+  color: #FFD93D  !important;
   font-weight: 600;
 }
 
