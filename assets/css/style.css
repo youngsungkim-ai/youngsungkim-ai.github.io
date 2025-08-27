@@ -304,7 +304,20 @@ h6 {
   .mobile-nav-toggle {
     display: block;
   }
-
+  .navbar-mobile ul {
+    display: block !important;
+    position: fixed;
+    top: 55px;
+    right: 15px;
+    bottom: 15px;
+    left: 15px;
+    padding: 10px 0;
+    background-color: rgba(0, 21, 36, 0.95);
+    overflow-y: auto;
+    transition: 0.3s;
+    border-radius: 10px;
+    z-index: 9998;
+  }
   .navbar ul {
     display: none;
   }
