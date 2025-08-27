@@ -238,7 +238,6 @@ h6 {
 .navbar li:hover>a {
   color: #fff;
 }
-
 /**
 * Mobile Navigation
 */
@@ -252,6 +251,7 @@ h6 {
   position: fixed;
   right: 15px;
   top: 15px;
+  z-index: 9999;
 }
 
 .navbar-mobile {
@@ -261,7 +261,7 @@ h6 {
   right: 0;
   left: 0;
   bottom: 0;
-  background: rgba(21, 97, 109, 0.95);  /* Using #15616D */
+  background: rgba(21, 97, 109, 0.95);
   transition: 0.3s;
   z-index: 999;
   margin-top: 0;
@@ -284,6 +284,8 @@ h6 {
   overflow-y: auto;
   transition: 0.3s;
   border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  background: rgba(0, 21, 36, 0.98);
 }
 
 .navbar-mobile li {
@@ -298,45 +300,32 @@ h6 {
 .navbar-mobile a:focus {
   font-size: 16px;
   position: relative;
+  color: rgba(255, 255, 255, 0.9);
 }
 
 @media (max-width: 991px) {
   .mobile-nav-toggle {
     display: block;
   }
-  .navbar-mobile ul {
-    display: block !important;
-    position: fixed;
-    top: 55px;
-    right: 15px;
-    bottom: 15px;
-    left: 15px;
-    padding: 10px 0;
-    background-color: rgba(0, 21, 36, 0.95);
-    overflow-y: auto;
-    transition: 0.3s;
-    border-radius: 10px;
-    z-index: 9998;
-  }
+  
   .navbar ul {
     display: none;
   }
-
+  
   #header h1 {
     font-size: 32px;
   }
-
+  
   #header h2 {
     font-size: 18px;
     line-height: 28px;
   }
-
+  
   #header h3 {
     font-size: 14px;
     line-height: 18px;
   }
 }
-
 /*--------------------------------------------------------------
 # Sections General
 --------------------------------------------------------------*/
