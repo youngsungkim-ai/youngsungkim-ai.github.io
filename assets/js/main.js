@@ -46,13 +46,33 @@
   }
 
   /**
-   * Mobile nav toggle
-   */
-  on('click', '.mobile-nav-toggle', function(e) {
-    select('#navbar').classList.toggle('navbar-mobile')
-    this.classList.toggle('bi-list')
-    this.classList.toggle('bi-x')
-  })
+ * Mobile nav toggle - Fixed version
+ */
+document.addEventListener('DOMContentLoaded', function() {
+  const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+  const navbar = document.querySelector('#navbar');
+  
+  if (mobileNavToggle && navbar) {
+    mobileNavToggle.addEventListener('click', function(e) {
+      e.preventDefault();
+      navbar.classList.toggle('navbar-mobile');
+      this.classList.toggle('bi-list');
+      this.classList.toggle('bi-x');
+    });
+
+    // Close mobile nav when clicking on a nav link
+    const navLinks = document.querySelectorAll('#navbar .nav-link');
+    navLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        if (navbar.classList.contains('navbar-mobile')) {
+          navbar.classList.remove('navbar-mobile');
+          mobileNavToggle.classList.add('bi-list');
+          mobileNavToggle.classList.remove('bi-x');
+        }
+      });
+    });
+  }
+});
 
   /**
    * Scroll with offset on links with a class name .scrollto
