@@ -50,17 +50,12 @@ a:hover {
   text-decoration: none;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
   font-family: "Raleway", sans-serif;
 }
 
 /*--------------------------------------------------------------
-# Header
+# Header - Initial State
 --------------------------------------------------------------*/
 #header {
   transition: ease-in-out 0.3s;
@@ -134,7 +129,67 @@ h6 {
 }
 
 /*--------------------------------------------------------------
-# Navigation Menu
+# Header - Fixed Top State (When scrolled to sections)
+--------------------------------------------------------------*/
+#header.header-top {
+  height: 80px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  background: rgba(0, 21, 36, 0.95);
+  z-index: 997;
+  overflow: hidden !important;
+  display: block;
+}
+
+#header.header-top .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+  max-height: 80px;
+  position: relative;
+}
+
+#header.header-top h1 {
+  font-size: 28px;
+  margin: 0;
+  padding: 0;
+  line-height: 80px;
+  flex-shrink: 0;
+}
+
+#header.header-top .social-links,
+#header.header-top h2,
+#header.header-top h3 {
+  display: none;
+}
+
+#header.header-top .navbar {
+  margin: 0;
+  margin-left: auto;
+}
+
+@media (max-width: 768px) {
+  #header.header-top {
+    height: 60px;
+    overflow: hidden !important;
+  }
+  
+  #header.header-top .container {
+    height: 60px;
+    max-height: 60px;
+  }
+
+  #header.header-top h1 {
+    font-size: 24px;
+    line-height: 60px;
+  }
+}
+
+/*--------------------------------------------------------------
+# Navigation Menu - Desktop
 --------------------------------------------------------------*/
 .navbar {
   padding: 0;
@@ -178,13 +233,12 @@ h6 {
   height: 2px;
   bottom: -4px;
   left: 0;
-  background-color: #18d26e;
+  background-color: #FF7D00;
   visibility: hidden;
   transition: all 0.3s ease-in-out 0s;
 }
 
 .navbar a:hover:before,
-.navbar li:hover>a:before,
 .navbar .active:before {
   visibility: visible;
   width: 25px;
@@ -192,12 +246,11 @@ h6 {
 
 .navbar a:hover,
 .navbar .active,
-.navbar .active:focus,
-.navbar li:hover>a {
+.navbar .active:focus {
   color: #fff;
 }
 
-/* Header-top specific navbar styles */
+/* Navigation in header-top state */
 #header.header-top .navbar {
   margin: 0;
 }
@@ -210,44 +263,10 @@ h6 {
 #header.header-top .navbar .active {
   color: #fff;
 }
-/* Header Top - Fixed */
-#header.header-top {
-  height: 80px;
-  position: fixed;
-  left: 0;
-  top: 0;
-  right: 0;
-  background: rgba(0, 0, 0, 0.9);
-  z-index: 997;
-}
 
-#header.header-top .container {
-  display: flex;
-  align-items: center;
-  height: 100%;
-}
-
-#header.header-top h1 {
-  margin-right: auto;
-  font-size: 36px;
-  margin-bottom: 0;  /* Add this */
-  line-height: 1;    /* Add this */
-}
-
-/* Hide these elements when header is in top position */
-#header.header-top .social-links,
-#header.header-top h2,
-#header.header-top h3 {
-  display: none;
-}
-
-#header.header-top .navbar {
-  margin: 0;
-  margin-left: auto;  /* Push navbar to the right */
-}
-/**
-* Mobile Navigation 
-*/
+/*--------------------------------------------------------------
+# Navigation Menu - Mobile
+--------------------------------------------------------------*/
 .mobile-nav-toggle {
   color: #fff;
   font-size: 28px;
@@ -268,7 +287,7 @@ h6 {
   right: 0;
   left: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.95);
+  background: rgba(0, 21, 36, 0.95);
   transition: 0.3s;
   z-index: 999;
   margin-top: 0;
@@ -283,7 +302,7 @@ h6 {
   left: 15px;
   padding: 10px 0;
   overflow-y: auto;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(0, 21, 36, 0.98);
   border: 2px solid rgba(255, 255, 255, 0.2);
   border-radius: 10px;
 }
@@ -296,15 +315,14 @@ h6 {
   margin: 0;
 }
 
-#navbar.navbar-mobile a,
-#navbar.navbar-mobile a:focus {
+#navbar.navbar-mobile a {
   font-size: 16px;
   color: #fff;
   display: block;
 }
 
 #navbar.navbar-mobile a:hover {
-  color: #18d26e;
+  color: #FF7D00;
 }
 
 #navbar.navbar-mobile a:before {
@@ -323,9 +341,24 @@ h6 {
   #navbar.navbar-mobile ul {
     display: block;
   }
+  
+  #header h1 {
+    font-size: 32px;
+  }
+
+  #header h2 {
+    font-size: 18px;
+    line-height: 28px;
+  }
+  
+  #header h3 {
+    font-size: 14px;
+    line-height: 18px;
+  }
 }
+
 /*--------------------------------------------------------------
-# Sections General
+# Sections
 --------------------------------------------------------------*/
 section {
   overflow: hidden;
@@ -339,10 +372,11 @@ section {
 }
 
 section.section-show {
-  top: 85px;
+  top: 100px;
   bottom: auto;
   opacity: 1;
   padding-bottom: 45px;
+  position: relative;
 }
 
 section .container {
@@ -359,7 +393,7 @@ section .container {
   }
 
   section.section-show {
-    top: 70px;
+    top: 80px;
   }
 }
 
@@ -385,7 +419,6 @@ section .container {
 }
 
 .section-title p {
-  margin: 0;
   margin: -10px 0 15px 0;
   font-size: 20px;
   font-weight: 600;
@@ -395,7 +428,7 @@ section .container {
 }
 
 /*--------------------------------------------------------------
-# About
+# About Section
 --------------------------------------------------------------*/
 .about-me .content h3 {
   font-weight: 700;
@@ -443,8 +476,13 @@ section .container {
   color: #555;
 }
 
+.about-me .content h3:hover {
+  color: #78290F;
+  transition: 0.3s;
+}
+
 /*--------------------------------------------------------------
-# Interests with Expandable Content
+# Research Interests Section
 --------------------------------------------------------------*/
 .interests .icon-box {
   padding: 20px;
@@ -514,7 +552,7 @@ section .container {
 }
 
 /*--------------------------------------------------------------
-# Resume
+# Publications Section
 --------------------------------------------------------------*/
 .resume .resume-title {
   font-size: 24px;
@@ -539,6 +577,11 @@ section .container {
   font-family: "Poppins", sans-serif;
   color: #15616D;
   margin-bottom: 10px;
+}
+
+.resume .resume-item h4:hover {
+  color: #78290F;
+  transition: 0.3s;
 }
 
 .resume .resume-item h5 {
@@ -571,7 +614,7 @@ section .container {
 }
 
 /*--------------------------------------------------------------
-# Contact
+# Contact Section
 --------------------------------------------------------------*/
 .contact .info-box {
   color: #555;
@@ -626,7 +669,7 @@ section .container {
 }
 
 /*--------------------------------------------------------------
-# Credits - Made Thinner
+# Footer Credits
 --------------------------------------------------------------*/
 .credits {
   position: fixed;
@@ -638,7 +681,7 @@ section .container {
   font-size: 12px;
   color: rgba(255, 255, 255, 0.8);
   z-index: 999999;
-  background: rgba(0, 21, 36, 0.7);  /* Using #001524 */
+  background: rgba(0, 21, 36, 0.7);
 }
 
 .credits a {
@@ -657,7 +700,9 @@ section .container {
   }
 }
 
-/* Custom additions */
+/*--------------------------------------------------------------
+# Helper Classes
+--------------------------------------------------------------*/
 .fst-italic {
   color: #15616D;
   font-style: italic;
@@ -685,15 +730,4 @@ ptitle {
   color: #15616D;
   margin-bottom: 15px;
   font-size: 20px;
-}
-
-/* Special hover state for burnt sienna accent */
-.resume-item h4:hover {
-  color: #78290F;
-  transition: 0.3s;
-}
-
-.about-me .content h3:hover {
-  color: #78290F;
-  transition: 0.3s;
 }
