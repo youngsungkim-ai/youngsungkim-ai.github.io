@@ -210,7 +210,41 @@ h6 {
 #header.header-top .navbar .active {
   color: #fff;
 }
+/* Header Top - Fixed */
+#header.header-top {
+  height: 80px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 997;
+}
 
+#header.header-top .container {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+#header.header-top h1 {
+  margin-right: auto;
+  font-size: 36px;
+  margin-bottom: 0;  /* Add this */
+  line-height: 1;    /* Add this */
+}
+
+/* Hide these elements when header is in top position */
+#header.header-top .social-links,
+#header.header-top h2,
+#header.header-top h3 {
+  display: none;
+}
+
+#header.header-top .navbar {
+  margin: 0;
+  margin-left: auto;  /* Push navbar to the right */
+}
 /**
 * Mobile Navigation 
 */
