@@ -133,56 +133,6 @@ h6 {
   background: #15616D;
 }
 
-/* Header Top - Fixed Navigation Bar */
-#header.header-top {
-  height: 70px;
-  position: fixed;
-  left: 0;
-  top: 0;
-  right: 0;
-  background: rgba(0, 21, 36, 0.95);
-  backdrop-filter: blur(10px);
-  z-index: 997;
-}
-
-#header.header-top .navbar {
-  margin: 0;
-}
-
-#header.header-top .navbar ul {
-  display: flex;
-}
-
-#header.header-top .navbar a {
-  color: rgba(255, 255, 255, 0.8) !important;
-}
-
-#header.header-top .navbar a:hover,
-#header.header-top .navbar .active {
-  color: #fff !important;
-}
-
-/* Ensure mobile toggle is visible in header-top */
-#header.header-top .mobile-nav-toggle {
-  color: #fff !important;
-}
-
-/* Mobile specific fixes for header-top */
-@media (max-width: 991px) {
-  #header.header-top .navbar ul {
-    display: none;
-  }
-  
-  #header.header-top .navbar.navbar-mobile ul {
-    display: block !important;
-    color: #fff !important;
-  }
-  
-  #header.header-top .navbar.navbar-mobile a {
-    color: #fff !important;
-  }
-}
-
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
@@ -221,6 +171,12 @@ h6 {
   transition: 0.3s;
 }
 
+.navbar a:hover,
+.navbar .active,
+.navbar .active:focus {
+  color: #fff;
+}
+
 .navbar a:before {
   content: "";
   position: absolute;
@@ -230,25 +186,60 @@ h6 {
   left: 0;
   background-color: #FF7D00;
   visibility: hidden;
-  width: 0px;
   transition: all 0.3s ease-in-out 0s;
 }
 
 .navbar a:hover:before,
-.navbar li:hover>a:before,
 .navbar .active:before {
   visibility: visible;
   width: 25px;
 }
 
-.navbar a:hover,
-.navbar .active,
-.navbar .active:focus,
-.navbar li:hover>a {
-  color: #fff;
+/* Header Top - THIS IS THE KEY FIX */
+#header.header-top {
+  height: 70px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  background: rgba(0, 21, 36, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 997;
 }
+
+#header.header-top .container {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+#header.header-top h1 {
+  margin-right: auto;
+  font-size: 28px;
+}
+
+#header.header-top .navbar {
+  margin: 0;
+}
+
+/* CRITICAL: Force nav link colors in header-top */
+#header.header-top .navbar a {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+#header.header-top .navbar a:hover,
+#header.header-top .navbar a.active {
+  color: #fff !important;
+}
+
+#header.header-top .social-links,
+#header.header-top h2,
+#header.header-top h3 {
+  display: none;
+}
+
 /**
-* Mobile Navigation - Fixed
+* Mobile Navigation
 */
 .mobile-nav-toggle {
   color: #fff;
@@ -263,7 +254,6 @@ h6 {
   z-index: 9999;
 }
 
-/* When navbar becomes navbar-mobile */
 #navbar.navbar-mobile {
   position: fixed;
   overflow: hidden;
@@ -294,33 +284,20 @@ h6 {
 
 #navbar.navbar-mobile li {
   padding: 0;
-  list-style: none;
   display: block;
-}
-
-#navbar.navbar-mobile li + li {
-  margin: 0;
 }
 
 #navbar.navbar-mobile a {
-  font-size: 16px;
-  position: relative;
   color: #fff !important;
   display: block;
   padding: 15px 20px;
-  font-family: "Poppins", sans-serif;
+  font-size: 16px;
 }
 
 #navbar.navbar-mobile a:hover {
   color: #FF7D00 !important;
-  background: rgba(255, 125, 0, 0.1);
 }
 
-#navbar.navbar-mobile a.active {
-  color: #FF7D00 !important;
-}
-
-/* Hide the before pseudo-element in mobile */
 #navbar.navbar-mobile a:before {
   display: none;
 }
@@ -336,6 +313,11 @@ h6 {
   
   #navbar.navbar-mobile ul {
     display: block !important;
+  }
+  
+  /* Force colors in mobile header-top */
+  #header.header-top .navbar.navbar-mobile a {
+    color: #fff !important;
   }
 }
 /*--------------------------------------------------------------
