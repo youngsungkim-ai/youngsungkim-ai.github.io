@@ -239,7 +239,7 @@ h6 {
   color: #fff;
 }
 /**
-* Mobile Navigation
+* Mobile Navigation - Complete Fix
 */
 .mobile-nav-toggle {
   color: #fff;
@@ -263,7 +263,7 @@ h6 {
   bottom: 0;
   background: rgba(21, 97, 109, 0.95);
   transition: 0.3s;
-  z-index: 999;
+  z-index: 998;
   margin-top: 0;
 }
 
@@ -274,7 +274,7 @@ h6 {
 }
 
 .navbar-mobile ul {
-  display: block;
+  display: block !important;
   position: absolute;
   top: 55px;
   right: 15px;
@@ -286,10 +286,12 @@ h6 {
   border: 2px solid rgba(255, 255, 255, 0.2);
   border-radius: 10px;
   background: rgba(0, 21, 36, 0.98);
+  text-align: center;
 }
 
 .navbar-mobile li {
   padding: 12px 20px;
+  list-style: none;
 }
 
 .navbar-mobile li+li {
@@ -300,7 +302,17 @@ h6 {
 .navbar-mobile a:focus {
   font-size: 16px;
   position: relative;
-  color: rgba(255, 255, 255, 0.9);
+  color: #fff !important;  /* Force white text */
+  display: block;
+  padding: 10px 20px;
+}
+
+.navbar-mobile a:hover {
+  color: #FF7D00 !important;  /* Orange on hover */
+}
+
+.navbar-mobile .active {
+  color: #FF7D00 !important;
 }
 
 @media (max-width: 991px) {
@@ -310,6 +322,11 @@ h6 {
   
   .navbar ul {
     display: none;
+  }
+  
+  /* When navbar has navbar-mobile class, show the menu */
+  .navbar.navbar-mobile ul {
+    display: block !important;
   }
   
   #header h1 {
