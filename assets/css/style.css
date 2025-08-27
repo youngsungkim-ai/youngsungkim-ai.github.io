@@ -207,7 +207,15 @@ h6 {
 #header.header-top .navbar li a.active {
   color: #fff !important;
 }
+/* Fix for navigation visibility in header-top state */
+#header.header-top .navbar a {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
 
+#header.header-top .navbar a:hover,
+#header.header-top .navbar .active {
+  color: #fff !important;
+}
 /* Ensure the navbar is properly positioned in header-top */
 #header.header-top .container {
   display: flex;
@@ -260,6 +268,7 @@ h6 {
   z-index: 9999;
 }
 
+/* Fix for mobile navigation */
 #navbar.navbar-mobile {
   position: fixed;
   overflow: hidden;
@@ -267,9 +276,9 @@ h6 {
   right: 0;
   left: 0;
   bottom: 0;
-  background: rgba(21, 97, 109, 0.95);
+  background: rgba(0, 0, 0, 0.95);
   transition: 0.3s;
-  z-index: 998;
+  z-index: 999;
   margin-top: 0;
 }
 
@@ -282,22 +291,23 @@ h6 {
   left: 15px;
   padding: 10px 0;
   overflow-y: auto;
-  background: rgba(0, 21, 36, 0.98);
+  background: rgba(0, 0, 0, 0.9);
   border: 2px solid rgba(255, 255, 255, 0.2);
   border-radius: 10px;
-  text-align: center;
 }
 
 #navbar.navbar-mobile li {
-  padding: 0;
-  display: block;
+  padding: 12px 20px;
 }
 
 #navbar.navbar-mobile a {
   color: #fff !important;
   display: block;
-  padding: 15px 20px;
   font-size: 16px;
+}
+
+#navbar.navbar-mobile a:hover {
+  color: #18d26e !important;
 }
 
 #navbar.navbar-mobile a:hover {
@@ -323,6 +333,15 @@ h6 {
   
   /* Force colors in mobile header-top */
   #header.header-top .navbar.navbar-mobile a {
+    color: #fff !important;
+  }
+}
+@media (max-width: 991px) {
+  #header.header-top #navbar.navbar-mobile ul {
+    display: block !important;
+  }
+  
+  #header.header-top #navbar.navbar-mobile a {
     color: #fff !important;
   }
 }
