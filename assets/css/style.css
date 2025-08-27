@@ -138,7 +138,7 @@ h6 {
 --------------------------------------------------------------*/
 .navbar {
   padding: 0;
-  margin-top: 25px;
+  margin-top: 35px;
 }
 
 .navbar ul {
@@ -154,7 +154,7 @@ h6 {
 }
 
 .navbar li+li {
-  margin-left: 25px;
+  margin-left: 30px;
 }
 
 .navbar a,
@@ -164,17 +164,11 @@ h6 {
   justify-content: space-between;
   padding: 0;
   font-family: "Poppins", sans-serif;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.7);
   white-space: nowrap;
   transition: 0.3s;
-}
-
-.navbar a:hover,
-.navbar .active,
-.navbar .active:focus {
-  color: #fff;
 }
 
 .navbar a:before {
@@ -184,76 +178,41 @@ h6 {
   height: 2px;
   bottom: -4px;
   left: 0;
-  background-color: #FF7D00;
+  background-color: #18d26e;
   visibility: hidden;
   transition: all 0.3s ease-in-out 0s;
 }
 
 .navbar a:hover:before,
+.navbar li:hover>a:before,
 .navbar .active:before {
   visibility: visible;
   width: 25px;
 }
 
-/* Fix for navigation visibility in sections */
-#header.header-top .navbar li a {
-  color: rgba(255, 255, 255, 0.8) !important;
-  font-family: "Poppins", sans-serif;
-  font-size: 15px;
-  font-weight: 400;
+.navbar a:hover,
+.navbar .active,
+.navbar .active:focus,
+.navbar li:hover>a {
+  color: #fff;
 }
 
-#header.header-top .navbar li a:hover,
-#header.header-top .navbar li a.active {
-  color: #fff !important;
+/* Header-top specific navbar styles */
+#header.header-top .navbar {
+  margin: 0;
 }
-/* Fix for navigation visibility in header-top state */
+
 #header.header-top .navbar a {
-  color: rgba(255, 255, 255, 0.8) !important;
+  color: rgba(255, 255, 255, 0.8);
 }
 
 #header.header-top .navbar a:hover,
 #header.header-top .navbar .active {
-  color: #fff !important;
-}
-/* Ensure the navbar is properly positioned in header-top */
-#header.header-top .container {
-  display: flex;
-  align-items: center;
-  height: 100%;
+  color: #fff;
 }
 
-#header.header-top .navbar {
-  margin: 0;
-  margin-left: auto;
-}
-
-#header.header-top .navbar ul {
-  display: flex;
-  align-items: center;
-  margin: 0;
-  padding: 0;
-}
-
-/* Mobile version in header-top */
-@media (max-width: 991px) {
-  #header.header-top .navbar ul {
-    display: none;
-  }
-  
-  #header.header-top #navbar.navbar-mobile ul {
-    display: block !important;
-    position: fixed;
-    top: 55px;
-    background: rgba(0, 21, 36, 0.98);
-  }
-  
-  #header.header-top #navbar.navbar-mobile a {
-    color: #fff !important;
-  }
-}
 /**
-* Mobile Navigation
+* Mobile Navigation 
 */
 .mobile-nav-toggle {
   color: #fff;
@@ -268,7 +227,6 @@ h6 {
   z-index: 9999;
 }
 
-/* Fix for mobile navigation */
 #navbar.navbar-mobile {
   position: fixed;
   overflow: hidden;
@@ -283,7 +241,7 @@ h6 {
 }
 
 #navbar.navbar-mobile ul {
-  display: block !important;
+  display: block;
   position: absolute;
   top: 55px;
   right: 15px;
@@ -300,18 +258,19 @@ h6 {
   padding: 12px 20px;
 }
 
-#navbar.navbar-mobile a {
-  color: #fff !important;
-  display: block;
+#navbar.navbar-mobile li+li {
+  margin: 0;
+}
+
+#navbar.navbar-mobile a,
+#navbar.navbar-mobile a:focus {
   font-size: 16px;
+  color: #fff;
+  display: block;
 }
 
 #navbar.navbar-mobile a:hover {
-  color: #18d26e !important;
-}
-
-#navbar.navbar-mobile a:hover {
-  color: #FF7D00 !important;
+  color: #18d26e;
 }
 
 #navbar.navbar-mobile a:before {
@@ -322,27 +281,13 @@ h6 {
   .mobile-nav-toggle {
     display: block;
   }
-  
-  #navbar ul {
+
+  .navbar ul {
     display: none;
   }
   
   #navbar.navbar-mobile ul {
-    display: block !important;
-  }
-  
-  /* Force colors in mobile header-top */
-  #header.header-top .navbar.navbar-mobile a {
-    color: #fff !important;
-  }
-}
-@media (max-width: 991px) {
-  #header.header-top #navbar.navbar-mobile ul {
-    display: block !important;
-  }
-  
-  #header.header-top #navbar.navbar-mobile a {
-    color: #fff !important;
+    display: block;
   }
 }
 /*--------------------------------------------------------------
