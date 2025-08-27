@@ -239,7 +239,7 @@ h6 {
   color: #fff;
 }
 /**
-* Mobile Navigation - Complete Fix
+* Mobile Navigation - Fixed
 */
 .mobile-nav-toggle {
   color: #fff;
@@ -254,7 +254,8 @@ h6 {
   z-index: 9999;
 }
 
-.navbar-mobile {
+/* When navbar becomes navbar-mobile */
+#navbar.navbar-mobile {
   position: fixed;
   overflow: hidden;
   top: 0;
@@ -267,13 +268,7 @@ h6 {
   margin-top: 0;
 }
 
-.navbar-mobile .mobile-nav-toggle {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-}
-
-.navbar-mobile ul {
+#navbar.navbar-mobile ul {
   display: block !important;
   position: absolute;
   top: 55px;
@@ -282,37 +277,43 @@ h6 {
   left: 15px;
   padding: 10px 0;
   overflow-y: auto;
-  transition: 0.3s;
+  background: rgba(0, 21, 36, 0.98);
   border: 2px solid rgba(255, 255, 255, 0.2);
   border-radius: 10px;
-  background: rgba(0, 21, 36, 0.98);
   text-align: center;
 }
 
-.navbar-mobile li {
-  padding: 12px 20px;
+#navbar.navbar-mobile li {
+  padding: 0;
   list-style: none;
+  display: block;
 }
 
-.navbar-mobile li+li {
+#navbar.navbar-mobile li + li {
   margin: 0;
 }
 
-.navbar-mobile a,
-.navbar-mobile a:focus {
+#navbar.navbar-mobile a {
   font-size: 16px;
   position: relative;
-  color: #fff !important;  /* Force white text */
+  color: #fff !important;
   display: block;
-  padding: 10px 20px;
+  padding: 15px 20px;
+  font-family: "Poppins", sans-serif;
 }
 
-.navbar-mobile a:hover {
-  color: #FF7D00 !important;  /* Orange on hover */
-}
-
-.navbar-mobile .active {
+#navbar.navbar-mobile a:hover {
   color: #FF7D00 !important;
+  background: rgba(255, 125, 0, 0.1);
+}
+
+#navbar.navbar-mobile a.active {
+  color: #FF7D00 !important;
+}
+
+/* Hide the before pseudo-element in mobile */
+#navbar.navbar-mobile a:before {
+  display: none;
 }
 
 @media (max-width: 991px) {
@@ -320,27 +321,12 @@ h6 {
     display: block;
   }
   
-  .navbar ul {
+  #navbar ul {
     display: none;
   }
   
-  /* When navbar has navbar-mobile class, show the menu */
-  .navbar.navbar-mobile ul {
+  #navbar.navbar-mobile ul {
     display: block !important;
-  }
-  
-  #header h1 {
-    font-size: 32px;
-  }
-  
-  #header h2 {
-    font-size: 18px;
-    line-height: 28px;
-  }
-  
-  #header h3 {
-    font-size: 14px;
-    line-height: 18px;
   }
 }
 /*--------------------------------------------------------------
