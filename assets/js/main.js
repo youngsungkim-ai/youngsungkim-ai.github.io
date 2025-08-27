@@ -3,6 +3,7 @@
 * Template URL: https://bootstrapmade.com/personal-free-resume-bootstrap-template/
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
+* Modified: Removed unused libraries for cleaner code
 */
 (function() {
   "use strict";
@@ -54,7 +55,7 @@
   })
 
   /**
-   * Scrool with ofset on links with a class name .scrollto
+   * Scroll with offset on links with a class name .scrollto
    */
   on('click', '#navbar .nav-link', function(e) {
     let section = select(this.hash)
@@ -135,118 +136,91 @@
         scrollto(window.location.hash)
       }
     }
+
+      /**
+   * Research Interests Toggle
+   */
+  const interestBoxes = document.querySelectorAll('.interests .icon-box');
+  if (interestBoxes.length > 0) {
+    interestBoxes.forEach(box => {
+      box.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        // Close other boxes for accordion behavior
+        interestBoxes.forEach(otherBox => {
+          if (otherBox !== this) {
+            otherBox.classList.remove('active');
+          }
+        });
+
+        // Toggle current box
+        this.classList.toggle('active');
+      });
+    });
+  }
+ 
+
+
   });
 
   /**
-   * Skills animation
+   * Animation on scroll (for any elements with data-aos attributes)
+   * Simple implementation without external library
    */
-  let skilsContent = select('.skills-content');
-  if (skilsContent) {
-    new Waypoint({
-      element: skilsContent,
-      offset: '80%',
-      handler: function(direction) {
-        let progress = select('.progress .progress-bar', true);
-        progress.forEach((el) => {
-          el.style.width = el.getAttribute('aria-valuenow') + '%'
+  window.addEventListener('scroll', () => {
+    const elements = document.querySelectorAll('[data-aos]');
+    elements.forEach(element => {
+      const rect = element.getBoundingClientRect();
+      const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+
+      if (isVisible) {
+        element.classList.add('aos-animate');
+      }
+    });
+  });
+
+  /**
+   * Smooth scroll for anchor links
+   */
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
         });
       }
-    })
+    });
+  });
+
+  /**
+   * Back to top button
+   */
+  const backtotop = select('.back-to-top')
+  if (backtotop) {
+    const toggleBacktotop = () => {
+      if (window.scrollY > 100) {
+        backtotop.classList.add('active')
+      } else {
+        backtotop.classList.remove('active')
+      }
+    }
+    window.addEventListener('load', toggleBacktotop)
+    window.addEventListener('scroll', toggleBacktotop)
   }
 
   /**
-   * Testimonials slider
-   */
-  new Swiper('.testimonials-slider', {
-    speed: 600,
-    loop: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false
-    },
-    slidesPerView: 'auto',
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'bullets',
-      clickable: true
-    },
-    breakpoints: {
-      320: {
-        slidesPerView: 1,
-        spaceBetween: 20
-      },
-
-      1200: {
-        slidesPerView: 3,
-        spaceBetween: 20
-      }
-    }
-  });
-
-  /**
-   * Porfolio isotope and filter
+   * Preloader
    */
   window.addEventListener('load', () => {
-    let portfolioContainer = select('.portfolio-container');
-    if (portfolioContainer) {
-      let portfolioIsotope = new Isotope(portfolioContainer, {
-        itemSelector: '.portfolio-item',
-        layoutMode: 'fitRows'
-      });
-
-      let portfolioFilters = select('#portfolio-flters li', true);
-
-      on('click', '#portfolio-flters li', function(e) {
-        e.preventDefault();
-        portfolioFilters.forEach(function(el) {
-          el.classList.remove('filter-active');
-        });
-        this.classList.add('filter-active');
-
-        portfolioIsotope.arrange({
-          filter: this.getAttribute('data-filter')
-        });
-      }, true);
-    }
-
-  });
-
-  /**
-   * Initiate portfolio lightbox 
-   */
-  const portfolioLightbox = GLightbox({
-    selector: '.portfolio-lightbox'
-  });
-
-  /**
-   * Initiate portfolio details lightbox 
-   */
-  const portfolioDetailsLightbox = GLightbox({
-    selector: '.portfolio-details-lightbox',
-    width: '90%',
-    height: '90vh'
-  });
-
-  /**
-   * Portfolio details slider
-   */
-  new Swiper('.portfolio-details-slider', {
-    speed: 400,
-    loop: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false
-    },
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'bullets',
-      clickable: true
+    const preloader = select('#preloader');
+    if (preloader) {
+      setTimeout(() => {
+        preloader.remove();
+      }, 100);
     }
   });
-
-  /**
-   * Initiate Pure Counter 
-   */
-  new PureCounter();
 
 })()
