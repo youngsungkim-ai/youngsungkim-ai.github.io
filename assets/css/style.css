@@ -462,6 +462,8 @@ section .container {
 }
 
 .about-me .content ul strong {
+  display: inline-block;
+  min-width: 14em;
   margin-right: 10px;
   color: #001524;
 }
