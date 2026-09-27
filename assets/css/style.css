@@ -434,19 +434,19 @@ section .container {
 --------------------------------------------------------------*/
 .about-me .content h3 {
   font-weight: 700;
-  font-size: 24px;
+  font-size: 20px;
   color: #15616D;
 }
 
 .about-me .content h4 {
   font-weight: 600;
-  font-size: 20px;
+  font-size: 18px;
   color: #001524;
 }
 
 .about-me .content h5 {
   font-weight: 500;
-  font-size: 18px;
+  font-size: 16px;
   color: #001524;
 }
 
@@ -470,7 +470,7 @@ section .container {
 }
 
 .about-me .content ul i {
-  font-size: 16px;
+  font-size: 15px;
   margin-right: 5px;
   color: #15616D;
   line-height: 0;
@@ -489,7 +489,7 @@ section .container {
 # Research Interests Section
 --------------------------------------------------------------*/
 .interests .icon-box {
-  padding: 20px;
+  padding: 19px;
   background: linear-gradient(135deg, rgba(255, 236, 209, 0.3) 0%, rgba(21, 97, 109, 0.08) 100%);
   border: 1px solid rgba(21, 97, 109, 0.2);
   border-radius: 8px;
@@ -510,7 +510,7 @@ section .container {
 }
 
 .interests .icon-box i {
-  font-size: 28px;
+  font-size: 24px;
   padding-right: 10px;
   line-height: 1;
   color: #15616D;
@@ -526,7 +526,7 @@ section .container {
 }
 
 .interests .icon-box .toggle-icon {
-  font-size: 20px;
+  font-size: 18px;
   color: #FF9A00;
   transition: transform 0.3s;
 }
@@ -559,7 +559,7 @@ section .container {
 # Publications Section
 --------------------------------------------------------------*/
 .resume .resume-title {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 700;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -574,8 +574,8 @@ section .container {
 }
 
 .resume .resume-item h4 {
-  line-height: 22px;
-  font-size: 18px;
+  line-height: 20px;
+  font-size: 16px;
   font-weight: 600;
   text-transform: none;
   font-family: "Poppins", sans-serif;
@@ -589,9 +589,9 @@ section .container {
 }
 
 .resume .resume-item h5 {
-  font-size: 15px;
+  font-size: 14px;
   background: rgba(255, 236, 209, 0.5);
-  padding: 5px 15px;
+  padding: 5px 14px;
   display: inline-block;
   font-weight: 600;
   margin-bottom: 10px;
@@ -631,7 +631,7 @@ section .container {
 }
 
 .contact .info-box i.bx {
-  font-size: 24px;
+  font-size: 20px;
   color: #fff;
   border-radius: 50%;
   padding: 14px;
@@ -640,7 +640,7 @@ section .container {
 }
 
 .contact .info-box h3 {
-  font-size: 20px;
+  font-size: 18px;
   color: #001524;
   font-weight: 700;
   margin: 10px 0 8px 68px;
@@ -650,7 +650,7 @@ section .container {
   padding: 0;
   color: #555;
   line-height: 24px;
-  font-size: 14px;
+  font-size: 13px;
   margin: 0 0 0 68px;
 }
 
@@ -660,7 +660,7 @@ section .container {
 }
 
 .contact .info-box .social-links a {
-  font-size: 18px;
+  font-size: 16px;
   display: inline-block;
   color: #15616D;
   line-height: 1;
